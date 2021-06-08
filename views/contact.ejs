@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--Author: David Vasiu-->
+<!--The beginning code for all these pages was helped by my own work as 
+well as from here: https://www.w3schools.com/howto/howto_make_a_website.asp -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact Us</title>
+        <link rel="stylesheet" href="../assets/master.css" />
+    </head>
+    <body>
+        <% if(typeof user == 'undefined') { %>
+            <%- include ("partials/header"); %> <!--Help with 'include' for header and footer from previous assingments such as Exercise 3, details.ejs and image.ejs-->
+        <% }else{%>
+            <%- include ("partials/header-savedConnections", {name: user.firstName}); %>
+        <%} %>
+        <main>
+            <div class="contact">
+                <ul class="contactList">
+                    <li><h1>Contact Us:</h1></li>
+                    <li>Email: davidvasiu@gmail.com</li>
+                    <li>Phone: (828)270-5813</li>
+                    <li>Location: Hickory, NC</li>
+                </ul>
+            </div>
+        </main>
+        <%- include ("partials/footer"); %>
+    </body>
+</html>

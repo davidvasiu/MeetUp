@@ -1,0 +1,27 @@
+use database
+db.users.drop()
+db.connections.drop()
+db.saveduserconnections.drop()
+db.createCollection('users')
+db.createCollection('connections')
+db.createCollection('saveduserconnections')
+db.connections.insert({"userID":"rch","connectionID":"123abc","name":"Sunday Church Service","host":"RBCH","topic":"Church/Youth",
+	"details":"There will be Sunday School (most Sundays), Bible reading/preaching, prayer, and worship (unless otherwise dictated).",
+        "dateAndTime":"Sunday mornings at 10am","location":"Romanian Baptist Church of Hickory"}),
+db.connections.insert({"userID":"dfg","connectionID": "124abc", "name": "Band Practice","host":"RBCH with worship pastor", "topic": "Church/Youth",
+        "details": "There will be roughly one hour of practice conducted the worship leader",
+        "dateAndTime": "Fridays at 6pm", "location" : "Romanian Baptist Church of Hickory"}),
+db.connections.insert({"userID":"qrd","connectionID": "125abc", "name": "Prayer meeting","host":"Youth Leader or designated leader", "topic": "Church/Youth",
+        "details": "We will have a time of prayer/ learning from the Bible. We learn about different topics from the Word, and then we'll have a time of prayer afterwards",
+        "dateAndTime": "Thursdays at 7pm", "location" : "Romanian Baptist Church of Hickory"}),
+db.connections.insert({"userID":"lmv","connectionID": "126abc", "name": "Soccer","host":"RBCH", "topic": "Sports",
+        "details": "This is an indoor event, so please bring indoor shoes.",
+        "dateAndTime": "Tuesday at 7pm", "location" : "Romanian Baptist Church of Hickory, in gazebo"}),
+db.connections.insert({"userID":"abd","connectionID": "127abc", "name": "Volleyball","host":"RBCH", "topic": "Sports",
+        "details": "We play volleyball with various age groups usually 13 years old and up.",
+        "dateAndTime": "When the weather permits: 7pm throughout the week on various days", "location" : "Romanian Baptist Church of Hickory, on the volleyball court"}),
+db.connections.insert({"userID":"xyz","connectionID": "128abc", "name": "Tournament (soccer in FL)","host":"New Life Romanian Baptist Church", "topic": "Sports",
+        "details": "This will be a soccer tournament in which different teams will compete with one another.",
+        "dateAndTime": "April 10th", "location" : "Florida"}),
+db.users.insert({"userID":"xyz","firstName":"David","lastName":"Vasiu","email":"davidvasiu@gmail.com", "password":"123abc"}),
+db.users.insert({"userID":"sdc","firstName":"Charlotte","lastName":"White","email":"CharlotteWhite@gmail.com", "password":"p@ssword"});

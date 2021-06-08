@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--Author: David Vasiu-->
+<!--The beginning code for all these pages was helped by my own work as 
+well as from here: https://www.w3schools.com/howto/howto_make_a_website.asp -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>About Us</title>
+        <link rel="stylesheet" href="../assets/master.css" />
+    </head>
+    <body>
+        <% if(typeof user == 'undefined') { %>
+            <%- include ("partials/header"); %>
+        <% }else{%>
+            <%- include ("partials/header-savedConnections", {name: user.firstName}); %> <!--Help with passing data (user.firstName) to another .ejs using include, this includes all the other views as well -->
+        <%} %>
+        <main>
+            <div class="aboutUs">
+                <h1>About Us:</h1>
+                <p>This website was made as a school project to be an event connection page for the Youth of the Romanian Baptist Church of Hickory.<br>
+                   You will be able to view if there are any connections/ events. Login with an account and respond to the events (Yes, No, Maybe), and more!
+                </p>
+                </div> 
+        </main>
+        <%- include ("partials/footer"); %>
+    </body>
+</html>

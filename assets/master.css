@@ -1,0 +1,389 @@
+/*Help with display property on elements: https://www.w3schools.com/cssref/pr_class_display.asp*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+/*backup color #094169*/
+body{
+    background-color: #133b58;
+}
+header{
+    background-color: white;
+    
+}
+nav{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0px 5%;
+}
+header a{
+    text-decoration: none;
+    color: #436e8d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16.5px;
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    padding-left: 80px;
+}
+.logged_In_Name_Container{
+    display: flex;
+    justify-content: space-between;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: #094169;
+    padding: 10px 0px;
+    margin: 0px 5%;
+}
+.logged_In_Name_Container h3{
+    text-decoration: none;
+    color: #436e8d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16.5px;
+    font-weight: bold;
+}
+h1{
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+}
+/*Help with the div with id="info" was from here: https://stackoverflow.com/questions/11438910/how-to-display-items-side-by-side-without-using-tables */
+#info{
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16.5px;
+    font-weight: 500;
+    padding: 5% 5% 0% 5%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+#info ul li{
+    list-style: none;
+    padding-bottom: 20px;
+    width: 80%;
+}
+#info a{
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16.5px;
+    font-weight: 500;
+    text-decoration: none;
+}
+#totalMain{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 3% 0% 5% 0%;
+}
+.connection-card-total{
+    width: 300px;
+    height: 50px;
+    transition: width 1s;
+}
+.connection-card-total:hover{
+    width: 320px;
+}
+#totalMain p{
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    color:rgb(64, 77, 136);
+}
+#totalMain{
+    margin-bottom: 20px;
+}
+/*help with aligning items: https://www.w3schools.com/css/css_align.asp*/
+/*help with transitions: https://www.w3schools.com/css/css3_transitions.asp*/
+.connection-card{
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    width: 300px;
+    height: 50px;
+    transition: width 1s;
+    background-color: rgb(238, 234, 234);
+}
+.connection-card:hover{
+    width: 320px;
+    background-color: #ffffff;
+}
+/*help with using flex/ flexbox: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container */
+.edit-delete{
+    display: flex;
+}
+.edit-delete h1{
+    font-size: 22.5px;
+}
+.edit-delete #edit{
+    padding: 4px 8px;
+    margin-left: 20px;
+    font-size: 15px;
+    text-align: center;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 4px;
+    border: none;
+}
+.edit-delete #delete{
+    padding: 4px 8px;
+    margin-left: 20px;
+    font-size: 15px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 4px;
+    border: none;  
+}
+#event-container{
+    width: 70%;
+    background-color: white;
+    color: gray;
+}
+.links a{
+    text-decoration: none;
+    color: #436e8d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16.5px;
+}
+.connection-table-container{
+    width: 60%;
+    margin: auto;
+    padding-bottom: 65px;
+}
+#connectionTable{
+    padding: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+}
+#connectionTable td{
+    width: 1000px;
+    
+}
+.infoConnection{
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16.5px;
+    font-weight: 500;
+    list-style: none;
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+
+#button{
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16.5px;
+    font-weight: 500;
+}
+#button ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+#button p{
+    text-align: center;
+    padding-bottom: 5px;
+}
+#button ul li{
+    padding-left: 10px;
+}
+/*button help from here: https://www.w3schools.com/css/css3_buttons.asp */
+#yes{
+    background-color:green;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    font-size: 15px;
+    padding: 4px 8px;
+}
+#no{
+    background-color:red;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    font-size: 15px;
+    padding: 4px 8px;
+}
+#maybe{
+    background-color:rgb(20, 20, 223);
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    font-size: 15px;
+    padding: 4px 8px;
+}
+#saved-connection-body{
+    padding: 5%;
+    text-align: center;
+}
+.noSavedConnections_Header{
+    padding-top: 2rem;
+    text-align: center;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+}
+#saved-connection-body h2{
+    padding-bottom: 30px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+/*help with table formatting from here: https://www.youtube.com/watch?v=biI9OFH6Nmg&t=39s */
+#saved-table{
+    color:rgb(75, 76, 77);
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    min-width: 70%;
+}
+#saved-table thead tr {
+    background-color: cadetblue;
+    color:white;
+}
+#saved-table th, #saved-table td{
+    padding: 12px 15px;
+}
+#saved-table tbody tr{
+    border-bottom: 1px solid grey;
+}
+#saved-table tbody tr{
+    background-color: white;
+}
+.update, .delete{
+    background-color:rgb(102, 103, 104);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border: none;
+    font-size: 15px;
+    padding: 4px 12px;
+    border-radius: 2px;
+}
+.aboutUs{
+    padding-top: 10px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+/*Help with css styling from here (margin properties):https://www.w3schools.com/css/css_padding.asp */
+.aboutUs p{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    width: 80%;
+    margin: 10px auto 0px auto;
+}
+.contact{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.contactList{
+    list-style: none;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+.contactList li{
+    padding-top: 10px;
+}
+.new-connection-form{
+    width: 80%;
+    margin: 10px auto 0px auto;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+/*border radius help: https://www.w3schools.com/css/css3_borders.asp*/
+.connection-form input{
+    margin: 10px 0px 10px 0px;
+    min-width: 250px;
+    height: 25px;
+    font-size: 13.9px;
+    color: rgb(131, 134, 134);
+    display: flex;
+    border-radius: 3px; 
+    border: none;
+}
+
+/*help with textarea: https://www.w3schools.com/tags/tag_textarea.asp and https://www.youtube.com/watch?v=GcPi65geFlo*/
+/*help with default font familiy for input to match in textarea: https://stackoverflow.com/questions/20013784/what-is-default-font-style-of-textarea-in-chrome-text-input-vs-textarea-size */
+.connection-form .description{
+    font-family: Arial;
+    font-size: 13.9px;
+    white-space: pre-wrap;
+    margin: 10px 0px 10px 0px;
+    min-width: 250px;
+    min-height: 100px;
+    color: rgb(131, 134, 134);
+    display: flex;
+    border-radius: 3px; 
+    border: none;
+    resize: none;
+}
+/*help with type selector from previous Nodejs assingments given through Canvas*/
+/*help with button style: https://www.w3schools.com/css/css3_buttons.asp */
+.connection-form [type="submit"]{
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    color: white;
+    background-color: cadetblue;
+}
+
+.login-container{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.login-form{
+    display: inline-block;
+    color:#ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 19px;
+}
+.login-form-info{
+    padding: 10px 0px 10px 0px;
+}
+
+.login-submit{
+    padding: 3px 5px 3px 5px;
+    border-radius: 2.5px;
+    font-size:16px;
+    color: #ffffff;
+    background-color:cadetblue;
+    border: none;
+}
+
+footer{
+    padding: 20px 0px;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    bottom: 0px;
+    position: fixed;
+}
+footer ul li{
+    display: inline-block;
+    padding:0px 20px ;
+    text-align: center;
+    color: #094169;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+}
+
+
+
+
+

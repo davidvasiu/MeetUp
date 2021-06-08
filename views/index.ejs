@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--Author: David Vasiu-->
+<!--The beginning code for all these pages was helped by my own work as 
+well as from here: https://www.w3schools.com/howto/howto_make_a_website.asp -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="../assets/master.css" />
+    </head>
+    <body>
+        <% if(typeof user == 'undefined') { %>
+            <%- include ("partials/header"); %> <!--Help with 'include' for header and footer from previous assingments such as Exercise 3, details.ejs and image.ejs-->
+        <% }else{%>
+            <%- include ("partials/header-savedConnections", {name: user.firstName}); %>
+        <%} %>
+            <div id="info">
+                <ul>
+                    <li><h1>Welcome</h1></li>
+                    <li><p>This website was made to help our youth stay connected with upcoming
+                        events and provide the leaders information on who will attend and how many.
+                        There are options to login (if you have an account), create an account, and start
+                        a new connection if you wish to add an event. We will also be providing the amount of 
+                        people attending each event. You will have the option of choosing, Yes, No, 
+                        or Maybe, for each event. There will also be information about each event such as, time, place,
+                         speaker (if nessesary), and more.
+                    </p></li>
+                </ul>
+                <img src="../assets/images/youth.jpg" alt="youthPicture"><!--This picture is taken from here: https://unsplash.com/@naassomz1?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText and: https://unsplash.com/s/photos/group-of-friends?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText -->
+            </div>
+        <%- include ("partials/footer"); %>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="../assets/master.css" />
+    </head>
+    <body>
+        <% if(typeof user == 'undefined') { %>
+            <%- include ("partials/header"); %> <!--Help with 'include' for header and footer from previous assingments such as Exercise 3, details.ejs and image.ejs-->
+        <% }else{%>
+            <%- include ("partials/header-savedConnections", {name: user.firstName}); %>
+        <%} %>
+        <div class='login-container'>
+            <h1>Login/ Sign Up</h1>
+            <form method="POST" action ="/myConnections/login" class='login-form'>
+                <!--Help with error: "The value of the for attribute of the label element must be the ID of a non-hidden form control" from here: https://stackoverflow.com/questions/49972668/the-for-attribute-of-the-label-element-must-refer-to-a-non-hidden-form-control  -->
+                <div class="login-form-info">
+                <label for='username'>username</label>
+                <input type="text" name="username" id="username">
+                </div>
+
+                <div class="login-form-info">
+                <label for='password'>password</label>
+                <input type="password" name="password" id="password"> <!-- help with type="password": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password-->
+                </div>
+
+                <div class="login-form-info">
+                <input type="submit" class="login-submit" value="submit">
+                </div>
+
+            </form>
+        </div>
+        <%- include ("partials/footer"); %>
+    </body>
+</html>

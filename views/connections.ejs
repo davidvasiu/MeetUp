@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--Author: David Vasiu-->
+<!--The beginning code for all these pages was helped by my own work as 
+well as from here: https://www.w3schools.com/howto/howto_make_a_website.asp -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Connections</title>
+        <link rel="stylesheet" href="../assets/master.css" />
+    </head>
+    <body>
+        <% if(typeof user == 'undefined') { %>
+            <%- include ("partials/header"); %> <!--Help with 'include' for header and footer from previous assingments such as Exercise 3, details.ejs and image.ejs-->
+        <% }else{%>
+            <%- include ("partials/header-savedConnections", {name: user.firstName}); %>
+        <%} %>
+        <main>
+            <div id=totalMain>
+                <% if(topic.length != 0) { %> 
+                    <!--The logic for the for loops and if statements were inspired by Dr. Najar's Exercise 3 Sample Demonstration video, the for loops and if statements were taken from her demonstration.
+                    Specifically: the first if statement idea, for(var i=0; i<topic.length; i++), for(var j=0; j<connection.length; j++), if(connection[j].getTopic() == topic[i]) -->
+                    <% for(var i=0; i<topic.length; i++){ %>
+                        <div class="links">
+                            <ul>
+                                <li><h1><%= topic[i] %></h1></li><br>
+                                <% for(var j=0; j<connection.length; j++) { %>
+                                    <% if(connection[j].topic == topic[i]) { %>
+                                       <div class="connection-card-total"><a href="/connections/<%= connection[j].connectionID; %>"><div class="connection-card"><li><p><%= connection[j].name; %></p></li></div></a></div><br>
+                                    <% } %>
+                                <% } %>
+                            </ul>
+                        </div>
+                    <% } %>  
+                <% }else{ %>
+                    <h1>There are no events, sorry.</h1>
+                <% }%>
+            </div>        
+        </main>
+        <%- include ("partials/footer"); %>
+    </body>
+</html>

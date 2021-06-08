@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--Author: David Vasiu-->
+<!--The beginning code for all these pages was helped by my own work as 
+well as from here: https://www.w3schools.com/howto/howto_make_a_website.asp -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>SavedConnections</title>
+        <link rel="stylesheet" href="../assets/master.css" />
+    </head>
+    <body>
+        <% if(typeof user == 'undefined') { %>
+            <%- include ("partials/header"); %> <!--Help with 'include' for header and footer from previous assingments such as Exercise 3, details.ejs and image.ejs-->
+        <% }else{%>
+            <%- include ("partials/header-savedConnections", {name: user.firstName}); %>
+        <%} %>
+        <main>
+            <% if(typeof connect == 'undefined') { %>
+                    <h2 class="noSavedConnections_Header">You have no connections, <%= user.firstName %>!</h2>
+                    <% }else{ %>
+                        <% if(connect.length != 0) { %>
+                        <div id=saved-connection-body>
+                            <h2>User's Connections</h2>
+                            <table id=saved-table><!--help with table formatting from here: https://www.youtube.com/watch?v=biI9OFH6Nmg&t=39s-->
+                                <thead>
+                                    <tr>
+                                        <th>Connection</th>
+                                        <th>Category</th>
+                                        <th colspan="3">Going?</th>                     
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i = 0; i < connect.length; i++){ %>
+                                    <tr>
+                                        <td><%= connect[i].name %></td>
+                                        <td><%= connect[i].topic %></td>
+                                        <td><%= rsvp[i] %></td>
+                                        <td><button onclick="window.location.href='/connection/<%= connect[i].connectionID %>';" class=update>Update</button></td>
+                                        <td><button onclick="window.location.href='/myConnections/delete?userID=<%=user.userID %>&connectionID=<%= connect[i].connectionID %>';" class=delete>Delete</button></td>
+                                    </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <% }else{ %>
+                            <h2 class="noSavedConnections_Header">You have no connections, <%= user.firstName %>!</h2>
+                        <% }%>
+                    <% }%>
+        </main>
+        <%- include ("partials/footer"); %>
+    </body>
+</html>

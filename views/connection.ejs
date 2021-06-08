@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--Author: David Vasiu-->
+<!--The beginning code for all these pages was helped by my own work as 
+well as from here: https://www.w3schools.com/howto/howto_make_a_website.asp -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Connection</title>
+        <link rel="stylesheet" href="../assets/master.css" />
+    </head>
+    <body>
+        <% if(typeof user == 'undefined') { %>
+            <%- include ("partials/header"); %> <!--Help with 'include' for header and footer from previous assingments such as Exercise 3, details.ejs and image.ejs-->
+        <% }else{%>
+            <%- include ("partials/header-savedConnections", {name: user.firstName}); %>
+        <%} %>
+        <main>
+            <div class="connection-table-container">
+                <table id=connectionTable><!--help with some table manipulation: https://stackoverflow.com/questions/7132223/a-table-row-was-2-columns-wide-and-exceeded-the-column-count-established-by-the-->
+                    <tr>
+                        <td>
+                            <ul>
+                                <li class=infoConnection>
+                                    <h1><%= connection[0].name; %></h1>
+                                    <img src="../assets/images/church2.jfif" alt="picureOfChurch"><!--Picture taken from (this is my local church that I attend): https://www.facebook.com/hickoryrbc/photos/a.528409287223241/2977462852317860-->
+                                    <p>
+                                    Topic: <%= connection[0].topic; %> <br>
+                                    Host: <%= connection[0].host; %><br>
+                                    When: <%= connection[0].dateAndTime; %> <br>
+                                    Where: <%= connection[0].location; %>
+                                    </p>
+                                </li>
+                            </ul>
+                        </td>
+                        <td id=button>    
+                            <p>RSVP! 4 people are coming.</p>
+                            <ul>
+                                <!--help with making button link to savedConnections page from here:https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html, and for the other files in this project, also more help from here: https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html -->
+                                <li>
+                                    <button onclick="window.location.href='/myConnections/addConnection?connectionID=<%= connection[0].connectionID %>&rsvp=yes';" id='yes'>Yes</button>
+                                </li>
+                                <li>
+                                    <button onclick="window.location.href='/myConnections/addConnection?connectionID=<%= connection[0].connectionID %>&rsvp=no';" id=no>No</button>
+                                </li>
+                                <li>
+                                    <button onclick="window.location.href='/myConnections/addConnection?connectionID=<%= connection[0].connectionID %>&rsvp=maybe';" id=maybe>Maybe</button>
+                                </li>
+                                
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <ul>
+                                <li class=infoConnection>
+                                    <div class="connection-details-container">
+                                        <h2>More Info</h2>
+                                        <p class='connection-details'>
+                                            <%= connection[0].details; %>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="edit-delete">
+                                        <% if( !(typeof edit == 'undefined') ){ %>
+                                            <h1>Connection controls:</h1><br>  
+                                            <button onclick="window.location.href='/newConnection/edit?connectionID=<%= connection[0].connectionID %>&name=<%= connection[0].name %>&topic=<%= connection[0].topic %>&host=<%= connection[0].host %>&details=<%= connection[0].details %>&location=<%= connection[0].location %>&when=<%= connection[0].dateAndTime %>&';" id='edit'>edit</button>
+                                            <button onclick="window.location.href='/myConnections/deleteConnection?connectionID=<%= connection[0].connectionID %>';" id='delete'>delete</button>
+                                        <% } %>
+                                    </div>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </main>
+        <%- include ("partials/footer"); %>
+    </body>
+</html>

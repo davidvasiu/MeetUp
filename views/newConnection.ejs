@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--Author: David Vasiu-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>New Connection</title>
+        <link rel="stylesheet" href="../assets/master.css" />
+    </head>
+    <body>
+        <% if(typeof user == 'undefined') { %>
+            <%- include ("partials/header"); %>
+        <% }else{%>
+            <%- include ("partials/header-savedConnections", {name: user.firstName}); %>
+        <%} %>
+        <main>
+            <% if( !(typeof editConnection == 'undefined') ) { %>
+                
+                <!--help with textarea: https://www.w3schools.com/tags/tag_textarea.asp and https://www.youtube.com/watch?v=GcPi65geFlo-->
+                <div class="new-connection-form">
+                <h1>Edit connection</h1>
+                <form method="POST" action="/newConnection?update=yes&connectionID=<%= editConnection[0] %>" class="connection-form">
+                    <input type="text" name="name" value="<%= editConnection[1]; %>">
+
+                    <input type="text" name="topic" value="<%= editConnection[2]; %>">
+
+                    <input type="text" name="host" value="<%= editConnection[3]; %>">
+
+                    <textarea name="details" class="description" maxlength="500" placeholder="description"><%= editConnection[4] %></textarea>
+
+                    <input type="text" name="where" value="<%= editConnection[5]; %>">
+
+                    <input type="text" name="when" value="<%= editConnection[6]; %>">
+
+                    <input type="submit" value="update connection">
+                </form>
+            </div>
+            <% }else{%>
+                <div class="new-connection-form">
+                    <h1>Create a new connection</h1>
+                    <form method="POST" action="/newConnection" class="connection-form">
+                        <input type="text" name="name" value="name">
+    
+                        <input type="text" name="topic" value="topic">
+    
+                        <input type="text" name="host" value="host">
+    
+                        <textarea name="details" class="description" maxlength="500" placeholder="description">description</textarea>
+    
+                        <input type="text" name="where" value="location">
+    
+                        <input type="text" name="when" value="when">
+    
+                        <input type="submit" value="create connection">
+                    </form>
+                </div>
+            <%} %>
+        </main>
+        <%- include ("partials/footer"); %>
+    </body>
+</html>
