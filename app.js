@@ -6,7 +6,8 @@ var userRouter = require('./controllers/userConntroller.js');
 var session = require('express-session'); //help with sessions: https://www.youtube.com/watch?v=R2FbisgWclU
 const mongoose = require('mongoose');
 require('dotenv').config();
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+//process.env.DATABASE_URL
+mongoose.connect('mongodb+srv://davidvasiu:1234abcd@cluster0.fihhz.mongodb.net/database?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 var app = express();
 
 app.set('view engine', 'ejs');
@@ -60,4 +61,4 @@ app.get('/*', function(req, res){
     res.render('index', {user: req.session.newUser});
 });
 
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
