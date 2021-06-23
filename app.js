@@ -5,8 +5,8 @@ var newConnectionRouter = require('./controllers/newConnection.js');
 var userRouter = require('./controllers/userConntroller.js');
 var session = require('express-session'); //help with sessions: https://www.youtube.com/watch?v=R2FbisgWclU
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/database', {useNewUrlParser: true, useUnifiedTopology: true});
+require('dotenv').config();
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 var app = express();
 
 app.set('view engine', 'ejs');
