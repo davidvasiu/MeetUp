@@ -143,7 +143,7 @@ userRouter.get('/signOut', async function(req, res){
     if(!(req.session.newUser)){
         res.render('login');
     }else{
-        await new_userProfile.delete_userConnections();
+        //await new_userProfile.delete_userConnections();
         await req.session.destroy();
         res.render('index'); 
     }
